@@ -10,6 +10,7 @@ require 'minitest/skip_dsl'
 require 'vcr'
 
 require_relative '../lib/workspace'
+require_relative '../lib/recipient'
 
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
