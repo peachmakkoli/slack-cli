@@ -1,3 +1,4 @@
+require_relative 'workspace'
 #!/usr/bin/env ruby
 
 def main
