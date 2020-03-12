@@ -3,10 +3,10 @@ require_relative 'test_helper'
 describe "Channel class" do
 	before do
 		@channel = SlackCLI::Channel.new(
-			slack_id: "CUT6YR3LJ", 
-			name: "lees-test-channel",
-			topic: "Testing the Slack CLI",
-			member_count: 2
+			"CUT6YR3LJ", 
+			"lees-test-channel",
+			"Testing the Slack CLI",
+			2
 		)
 	end
 

@@ -3,11 +3,11 @@ require_relative 'test_helper'
 describe "User class" do
 	before do
 		@user = SlackCLI::User.new(
-			slack_id: "UV7S06J4X", 
-			name: "Lee",
-			real_name: "Lee Higgins",
-			status_text: "I'm happy :)",
-			status_emoji: ":sparkles:"
+			"UV7S06J4X", 
+			"Lee",
+			"Lee Higgins",
+			"I'm happy :)",
+			":sparkles:"
 		)
 	end
 
