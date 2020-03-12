@@ -5,11 +5,7 @@ describe "Channel class" do
 		@channel = SlackCLI::Channel.new(
 			slack_id: "CUT6YR3LJ", 
 			name: "lees-test-channel",
-			topic: {
-				"value": "Testing the Slack CLI",
-				"creator": "",
-				"last_set": 0
-			},
+			topic: "Testing the Slack CLI",
 			member_count: 2
 		)
 	end
