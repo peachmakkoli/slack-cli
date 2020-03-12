@@ -2,7 +2,7 @@ require_relative 'test_helper'
 
 describe "User class" do
 	before do
-		@user = SlackCLI::Recipient::User.new(
+		@user = SlackCLI::User.new(
 			slack_id: "UV7S06J4X", 
 			name: "Lee",
 			real_name: "Lee Higgins",
@@ -13,7 +13,7 @@ describe "User class" do
 
 	describe "User instantiation" do
 		it "is an instance of User" do
-			expect(@user).must_be_kind_of SlackCLI::Recipient::User #check this!!!!!! thank you faezeh :)))
+			expect(@user).must_be_kind_of SlackCLI::User
 		end
 
 		it "is set up for specific attributes and data types" do
