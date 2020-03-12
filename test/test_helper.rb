@@ -3,6 +3,9 @@ SimpleCov.start do
   add_filter 'test/'
 end
 
+require 'dotenv'
+Dotenv.load
+
 require 'minitest'
 require 'minitest/autorun'
 require 'minitest/reporters'
