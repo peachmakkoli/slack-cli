@@ -2,7 +2,7 @@ require_relative 'test_helper'
 
 describe "Recipient class" do
 	before do
-		@recipient = Recipient.new(
+		@recipient = SlackCLI::Recipient.new(
 			slack_id: "UV7S06J4X", 
 			name: "Lee"
 		)
@@ -10,7 +10,7 @@ describe "Recipient class" do
 
 	describe "Recipient instantiation" do
 		it "is an instance of Recipient" do
-			expect(@recipient).must_be_kind_of Recipient
+			expect(@recipient).must_be_kind_of SlackCLI::Recipient
 		end
 
 		it "is set up for specific attributes and data types" do

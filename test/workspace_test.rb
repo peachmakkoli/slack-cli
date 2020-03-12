@@ -2,12 +2,12 @@ require_relative 'test_helper'
 
 describe "Workspace class" do
 	before do
-		@workspace = Workspace.new
+		@workspace = SlackCLI::Workspace.new
 	end
 
 	describe "Workspace instantiation" do
 		it "is an instance of Workspace" do
-			expect(@workspace).must_be_kind_of Workspace
+			expect(@workspace).must_be_kind_of SlackCLI::Workspace
 		end
 
 		it "is set up for specific attributes and data types" do
