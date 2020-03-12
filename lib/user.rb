@@ -10,6 +10,14 @@ module SlackCLI
 			@status_text = status_text
 			@status_emoji = status_emoji
 		end
+
+		def details
+			
+		end
+
+		def self.list_all
+			
+		end
 		
 	end
 end

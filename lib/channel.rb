@@ -9,6 +9,14 @@ module SlackCLI
 			@topic = topic
 			@member_count = member_count
 		end
+
+		def details
+
+		end
+
+		def self.list_all
+			
+		end
 		
 	end
 end
