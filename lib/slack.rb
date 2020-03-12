@@ -1,5 +1,7 @@
-require_relative 'workspace'
 #!/usr/bin/env ruby
+
+require 'table_print'
+require_relative 'workspace'
 
 def main
   puts "Welcome to the Ada Slack CLI!"
@@ -13,9 +15,19 @@ def main
   # When I type list channels, I should see a list of all the channels for that workspace. This list should include the channel's name, topic, member count, and Slack ID.
   end
 
-  # When I type quit, the program should exit.
-  
-  # After completing any command other than quit, the program should reprint the list of commands and ask for another input.
+  loop do
+		puts "\nWhat would you like to do? \n1) list users \n2) list channels \n3) quit"
+		option = gets.chomp.downcase
+
+		case option
+			when "1", "list users"
+				tp list_users
+			when "2", "list channels"
+				tp list_channels
+			when "3", "quit"
+				break
+		end
+	end
 
   puts "Thank you for using the Ada Slack CLI"
 end
