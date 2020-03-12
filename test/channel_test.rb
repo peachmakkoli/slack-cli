@@ -33,7 +33,7 @@ describe "Channel class" do
 				channels = SlackCLI::Channel.list_all
 				expect(channels).must_be_kind_of Array
 				expect(channels[0]["name"]).must_equal "lees-test-channel"
-				expect(channels[0]["name"]).must_equal "fun"
+				expect(channels[-1]["name"]).must_equal "fun"
 			end
 		end
 	end
