@@ -26,4 +26,15 @@ describe "Channel class" do
 			expect(@channel.member_count).must_be_kind_of Integer
 		end
 	end
+
+	describe "#self.list_all" do
+		it "returns all the channels" do
+			VCR.use_cassette("slack-channels") do
+				channels = SlackCLI::Channel.list_all
+				expect(channels).must_be_kind_of Array
+				expect(channels[0]["name"]).must_equal "lees-test-channel"
+				expect(channels[0]["name"]).must_equal "fun"
+			end
+		end
+	end
 end
