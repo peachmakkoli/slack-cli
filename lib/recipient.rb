@@ -1,5 +1,16 @@
-module SlackCLI
+require 'httparty'
+
+module SlackCLI	
 	class Recipient
+		API_KEY = ENV["SLACK_TOKEN"]
+		BASE_URL = "https://slack.com/api/"
+		POST_URL = "#{BASE_URL}chat.postMessage"
+		GET_QUERY = {
+			query: {
+				token: API_KEY,
+			}
+		}
+		
 		attr_reader :slack_id, :name
 
 		def initialize(slack_id:, name:)
@@ -12,7 +23,7 @@ module SlackCLI
 		end
 
 		def self.get(url, params)
-
+			return HTTParty.get(url, params)
 		end
 
 		private 
