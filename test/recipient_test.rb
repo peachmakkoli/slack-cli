@@ -3,8 +3,8 @@ require_relative 'test_helper'
 describe "Recipient class" do
 	before do
 		@recipient = SlackCLI::Recipient.new(
-			"UV7S06J4X", 
-			"Lee"
+			slack_id: "UV7S06J4X", 
+			name: "Lee"
 		)
 	end
 
