@@ -8,6 +8,7 @@ module SlackCLI
 
 		def initialize(slack_id:, name:, real_name:, status_text:, status_emoji:)
 			super(slack_id: slack_id, name: name)
+			
 			@real_name = real_name
 			@status_text = status_text
 			@status_emoji = status_emoji
@@ -19,6 +20,12 @@ module SlackCLI
 
 		def self.list_all
 			response = self.get(GETUSER_URL, GET_QUERY)
+			
+			# case response.code
+			# when 400, 401, 403, 404, 500
+			# 	raise SlackApiError, response["reason"]
+			# end
+
 			return response["members"].map { |user| new(
 				slack_id: user["id"],
 				name: user["name"],
