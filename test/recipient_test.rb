@@ -53,4 +53,18 @@ describe "Recipient class" do
 			end
 		end
 	end
+
+	# remove these methods from private so they can be tested?
+	
+	# describe "#details" do
+	# 	it "raises a NotImplementedError if called" do
+	# 		expect{SlackCLI::Recipient.details}.must_raise NotImplementedError
+	# 	end
+	# end
+
+	# describe "#self.list_all" do
+	# 	it "raises a NotImplementedError if called" do
+	# 		expect{SlackCLI::Recipient.list_all}.must_raise NotImplementedError
+	# 	end
+	# end
 end
