@@ -1,16 +1,16 @@
 require_relative 'test_helper'
 
 describe "Channel class" do
-	before do
-		@channel = SlackCLI::Channel.new(
-			slack_id: "CUT6YR3LJ", 
-			name: "lees-test-channel",
-			topic: "For having fun with the Slack API!!",
-			member_count: 2
-		)
-	end
-
 	describe "Channel instantiation" do
+		before do
+			@channel = SlackCLI::Channel.new(
+				slack_id: "CUT6YR3LJ", 
+				name: "lees-test-channel",
+				topic: "For having fun with the Slack API!!",
+				member_count: 2
+			)
+		end
+		
 		it "is an instance of Channel" do
 			expect(@channel).must_be_kind_of SlackCLI::Channel
 		end
