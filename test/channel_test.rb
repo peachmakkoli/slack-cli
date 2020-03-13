@@ -5,7 +5,7 @@ describe "Channel class" do
 		@channel = SlackCLI::Channel.new(
 			slack_id: "CUT6YR3LJ", 
 			name: "lees-test-channel",
-			topic: "Testing the Slack CLI",
+			topic: "For having fun with the Slack API!!",
 			member_count: 2
 		)
 	end
@@ -32,8 +32,27 @@ describe "Channel class" do
 			VCR.use_cassette("slack-channels") do
 				channels = SlackCLI::Channel.list_all
 				expect(channels).must_be_kind_of Array
-				expect(channels[0]["name"]).must_equal "lees-test-channel"
-				expect(channels[-1]["name"]).must_equal "fun"
+				expect(channels.length).must_equal 6
+			end
+		end
+
+		it "returns the correct information for the first channel" do
+			VCR.use_cassette("slack-channels") do
+				channels = SlackCLI::Channel.list_all
+				expect(channels[0].slack_id).must_equal "CUT6YR3LJ"
+				expect(channels[0].name).must_equal "lees-test-channel"
+				expect(channels[0].topic).must_equal "For having fun with the Slack API!!"
+				expect(channels[0].member_count).must_equal 2
+			end
+		end
+
+		it "returns the correct information for the last channel" do
+			VCR.use_cassette("slack-channels") do
+				channels = SlackCLI::Channel.list_all
+				expect(channels[-1].slack_id).must_equal "CVB8WV8BS"
+				expect(channels[-1].name).must_equal "fun"
+				expect(channels[-1].topic).must_equal ""
+				expect(channels[-1].member_count).must_equal 5
 			end
 		end
 	end
