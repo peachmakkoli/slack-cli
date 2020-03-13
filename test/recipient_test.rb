@@ -39,8 +39,8 @@ describe "Recipient class" do
 			VCR.use_cassette("slack-users") do
 				response = SlackCLI::Recipient.get(GETUSER_URL, GET_QUERY)
 				expect(response.code).must_equal 200
-				expect(response.parsed_response["ok"]).must_equal true
-				expect(response.parsed_response["members"]).must_be_kind_of Array
+				expect(response["ok"]).must_equal true
+				expect(response["members"]).must_be_kind_of Array
 			end
 		end
 
@@ -48,8 +48,8 @@ describe "Recipient class" do
 			VCR.use_cassette("slack-channels") do
 				response = SlackCLI::Recipient.get(GETCHANNEL_URL, GET_QUERY)
 				expect(response.code).must_equal 200
-				expect(response.parsed_response["ok"]).must_equal true
-				expect(response.parsed_response["channels"]).must_be_kind_of Array
+				expect(response["ok"]).must_equal true
+				expect(response["channels"]).must_be_kind_of Array
 			end
 		end
 	end
