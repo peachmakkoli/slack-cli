@@ -1,18 +1,22 @@
 #!/usr/bin/env ruby
 
 require 'table_print'
+
 require_relative 'workspace'
+require_relative 'recipient'
+require_relative 'channel'
+require_relative 'user'
 
 def main
-  puts "Welcome to the Ada Slack CLI!"
-  workspace = SlackCLI::Workspace.new
+  puts "Welcome to Lee's Slack CLI!"
+  @workspace = SlackCLI::Workspace.new
 
   def list_users
-  return workspace.users
+  return @workspace.users
   end
 
   def list_channels
-  return workspace.channels
+  return @workspace.channels
   end
 
   loop do
@@ -29,7 +33,7 @@ def main
 		end
 	end
 
-  puts "Thank you for using the Ada Slack CLI"
+  puts "Thank you for using Lee's Slack CLI!"
 end
 
 main if __FILE__ == $PROGRAM_NAME
