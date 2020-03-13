@@ -18,8 +18,12 @@ module SlackCLI
 
 		def self.list_all
 			response = self.get(GETCHANNEL_URL, GET_QUERY)
-			return response["channels"]
+			return response["channels"].map { |channel| new(
+				slack_id: channel["id"],
+				name: channel["name"],
+				topic: channel["topic"]["value"],
+				member_count: channel["num_members"]
+			)}
 		end
-		
 	end
 end
