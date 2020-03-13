@@ -2,7 +2,7 @@ require_relative 'recipient'
 
 module SlackCLI
 	class User < Recipient
-		GETUSER_URL = "#{SlackCLI::Recipient::BASE_URL}users.list"
+		GETUSER_URL = "#{BASE_URL}users.list"
 
 		attr_reader :real_name, :status_text, :status_emoji
 
@@ -18,7 +18,8 @@ module SlackCLI
 		end
 
 		def self.list_all
-			# call the get method, pass all relevant data from response into the initializer
+			response = self.get(GETUSER_URL, GET_QUERY)
+			return response["members"]
 		end
 		
 	end
