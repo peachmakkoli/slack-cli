@@ -1,6 +1,9 @@
 #!/usr/bin/env ruby
 
 require 'table_print'
+require 'httparty'
+require 'dotenv'
+Dotenv.load
 
 require_relative 'workspace'
 require_relative 'recipient'
