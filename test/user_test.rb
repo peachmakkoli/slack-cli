@@ -52,11 +52,11 @@ describe "User class" do
 		it "returns the correct information for the last user" do
 			VCR.use_cassette("slack-users") do
 				users = SlackCLI::User.list_all
-				expect(users[0].slack_id).must_equal "UVDHLDG0N"
-				expect(users[0].name).must_equal "space_antonia_slack_a"
-				expect(users[0].real_name).must_equal "space_antonia_slack_a"
-				expect(users[0].status_text).must_equal ""
-				expect(users[0].status_emoji).must_equal ""
+				expect(users[-1].slack_id).must_equal "UVDHLDG0N"
+				expect(users[-1].name).must_equal "space_antonia_slack_a"
+				expect(users[-1].real_name).must_equal "space_antonia_slack_a"
+				expect(users[-1].status_text).must_equal ""
+				expect(users[-1].status_emoji).must_equal ""
 			end
 		end
 	end
