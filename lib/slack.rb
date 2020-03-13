@@ -8,11 +8,11 @@ def main
   workspace = SlackCLI::Workspace.new
 
   def list_users
-  # When I type list users, I should see a list of all the users in the Slack workspace. This list should include username, real name, and Slack ID.
+  return workspace.users
   end
 
   def list_channels
-  # When I type list channels, I should see a list of all the channels for that workspace. This list should include the channel's name, topic, member count, and Slack ID.
+  return workspace.channels
   end
 
   loop do
