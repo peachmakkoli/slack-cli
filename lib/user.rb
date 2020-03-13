@@ -14,12 +14,18 @@ module SlackCLI
 		end
 
 		def details
-			# return the attributes of a channel
+			# return the attributes of a user
 		end
 
 		def self.list_all
 			response = self.get(GETUSER_URL, GET_QUERY)
-			return response["members"]
+			return response["members"].map { |user| new(
+				slack_id: user["id"],
+				name: user["name"],
+				real_name: user["real_name"],
+				status_text: user["profile"]["status_text"],
+				status_emoji: user["profile"]["status_emoji"]
+			)}
 		end
 		
 	end
