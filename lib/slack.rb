@@ -28,9 +28,9 @@ def main
 
 		case option
 			when "1", "list users"
-				tp list_users
+				tp list_users, :slack_id, :name, :real_name, :status_text, :status_emoji
 			when "2", "list channels"
-				tp list_channels
+				tp list_channels, :slack_id, :name, :topic, :member_count
 			when "3", "quit"
 				break
 		end
