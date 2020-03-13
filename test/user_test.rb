@@ -28,4 +28,15 @@ describe "User class" do
 			expect(@user.status_emoji).must_be_kind_of String
 		end
 	end
+
+	describe "#self.list_all" do
+		it "returns all the users" do
+			VCR.use_cassette("slack-users") do
+				users = SlackCLI::User.list_all
+				expect(users).must_be_kind_of Array
+				expect(users[0]["name"]).must_equal "slackbot"
+				expect(users[-1]["name"]).must_equal "space_antonia_slack_a"
+			end
+		end
+	end
 end
