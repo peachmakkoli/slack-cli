@@ -18,7 +18,7 @@ module SlackCLI
 
 		def self.list_all
 			response = self.get(GETCHANNEL_URL, GET_QUERY)
-			return response.parsed_response["channels"]
+			return response["channels"]
 		end
 		
 	end
