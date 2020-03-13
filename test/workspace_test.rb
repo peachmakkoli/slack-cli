@@ -2,7 +2,9 @@ require_relative 'test_helper'
 
 describe "Workspace class" do
 	before do
-		@workspace = SlackCLI::Workspace.new
+		VCR.use_cassette("slack-workspace") do
+			@workspace = SlackCLI::Workspace.new
+		end
 	end
 
 	describe "Workspace instantiation" do
