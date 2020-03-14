@@ -35,26 +35,6 @@ describe "Recipient class" do
 		end
 	end
 
-	describe "#self.get" do
-		it "can get a list of users" do
-			VCR.use_cassette("users-list-endpoint") do
-				response = SlackCLI::Recipient.get(GETUSER_URL, GET_QUERY)
-				expect(response.code).must_equal 200
-				expect(response["ok"]).must_equal true
-				expect(response["members"]).must_be_kind_of Array
-			end
-		end
-
-		it "can get a list of channels" do
-			VCR.use_cassette("channels-list-endpoint") do
-				response = SlackCLI::Recipient.get(GETCHANNEL_URL, GET_QUERY)
-				expect(response.code).must_equal 200
-				expect(response["ok"]).must_equal true
-				expect(response["channels"]).must_be_kind_of Array
-			end
-		end
-	end
-
 	# remove these methods from private so they can be tested?
 
 	# describe "#details" do
