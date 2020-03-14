@@ -29,6 +29,23 @@ describe "User class" do
 		end
 	end
 
+	describe "#self.get" do
+		it "can get a list of users" do
+			VCR.use_cassette("users-list-endpoint") do
+				response = SlackCLI::Recipient.get(GETUSER_URL, GET_QUERY)
+				expect(response.code).must_equal 200
+				expect(response["ok"]).must_equal true
+				expect(response["members"]).must_be_kind_of Array
+			end
+		end
+		
+		it "raises an error when a call fails" do
+			VCR.use_cassette("users-list-endpoint") do
+				expect{SlackCLI::Recipient.get("https://slack.com/api/bogus.endpoint", GET_QUERY)}.must_raise SlackCLI::SlackAPIError
+			end
+		end
+	end
+
 	describe "#self.list_all" do
 		it "returns all the users" do
 			VCR.use_cassette("users-list-endpoint") do
@@ -57,12 +74,6 @@ describe "User class" do
 				expect(users[-1].real_name).must_equal "space_antonia_slack_a"
 				expect(users[-1].status_text).must_equal ""
 				expect(users[-1].status_emoji).must_equal ""
-			end
-		end
-
-		it "raises an error when a call fails" do
-			VCR.use_cassette("users-list-endpoint") do
-			
 			end
 		end
 	end
