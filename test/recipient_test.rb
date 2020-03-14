@@ -9,7 +9,7 @@ describe "Recipient class" do
 	POST_URL = "#{BASE_URL}chat.postMessage"
 	GET_QUERY = {
 		query: {
-			token: USER_KEY,
+			token: BOT_KEY,
 		}
 	}
 
