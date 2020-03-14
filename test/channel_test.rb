@@ -10,7 +10,7 @@ describe "Channel class" do
 				member_count: 2
 			)
 		end
-		
+
 		it "is an instance of Channel" do
 			expect(@channel).must_be_kind_of SlackCLI::Channel
 		end
@@ -29,7 +29,7 @@ describe "Channel class" do
 
 	describe "#self.list_all" do
 		it "returns all the channels" do
-			VCR.use_cassette("slack-channels") do
+			VCR.use_cassette("channels-list-endpoint") do
 				channels = SlackCLI::Channel.list_all
 				expect(channels).must_be_kind_of Array
 				expect(channels.length).must_equal 6
@@ -37,7 +37,7 @@ describe "Channel class" do
 		end
 
 		it "returns the correct information for the first channel" do
-			VCR.use_cassette("slack-channels") do
+			VCR.use_cassette("channels-list-endpoint") do
 				channels = SlackCLI::Channel.list_all
 				expect(channels[0].slack_id).must_equal "CUT6YR3LJ"
 				expect(channels[0].name).must_equal "lees-test-channel"
@@ -47,7 +47,7 @@ describe "Channel class" do
 		end
 
 		it "returns the correct information for the last channel" do
-			VCR.use_cassette("slack-channels") do
+			VCR.use_cassette("channels-list-endpoint") do
 				channels = SlackCLI::Channel.list_all
 				expect(channels[-1].slack_id).must_equal "CVB8WV8BS"
 				expect(channels[-1].name).must_equal "fun"

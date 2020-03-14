@@ -36,7 +36,7 @@ describe "Recipient class" do
 
 	describe "#self.get" do
 		it "can get a list of users" do
-			VCR.use_cassette("slack-users") do
+			VCR.use_cassette("users-list-endpoint") do
 				response = SlackCLI::Recipient.get(GETUSER_URL, GET_QUERY)
 				expect(response.code).must_equal 200
 				expect(response["ok"]).must_equal true
@@ -45,7 +45,7 @@ describe "Recipient class" do
 		end
 
 		it "can get a list of channels" do
-			VCR.use_cassette("slack-channels") do
+			VCR.use_cassette("channels-list-endpoint") do
 				response = SlackCLI::Recipient.get(GETCHANNEL_URL, GET_QUERY)
 				expect(response.code).must_equal 200
 				expect(response["ok"]).must_equal true
@@ -55,7 +55,7 @@ describe "Recipient class" do
 	end
 
 	# remove these methods from private so they can be tested?
-	
+
 	# describe "#details" do
 	# 	it "raises a NotImplementedError if called" do
 	# 		expect{SlackCLI::Recipient.details}.must_raise NotImplementedError

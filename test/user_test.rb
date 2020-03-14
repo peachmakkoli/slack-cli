@@ -31,7 +31,7 @@ describe "User class" do
 
 	describe "#self.list_all" do
 		it "returns all the users" do
-			VCR.use_cassette("slack-users") do
+			VCR.use_cassette("users-list-endpoint") do
 				users = SlackCLI::User.list_all
 				expect(users).must_be_kind_of Array
 				expect(users.length).must_equal 11
@@ -39,7 +39,7 @@ describe "User class" do
 		end
 
 		it "returns the correct information for the first user" do
-			VCR.use_cassette("slack-users") do
+			VCR.use_cassette("users-list-endpoint") do
 				users = SlackCLI::User.list_all
 				expect(users[0].slack_id).must_equal "USLACKBOT"
 				expect(users[0].name).must_equal "slackbot"
@@ -50,13 +50,19 @@ describe "User class" do
 		end
 
 		it "returns the correct information for the last user" do
-			VCR.use_cassette("slack-users") do
+			VCR.use_cassette("users-list-endpoint") do
 				users = SlackCLI::User.list_all
 				expect(users[-1].slack_id).must_equal "UVDHLDG0N"
 				expect(users[-1].name).must_equal "space_antonia_slack_a"
 				expect(users[-1].real_name).must_equal "space_antonia_slack_a"
 				expect(users[-1].status_text).must_equal ""
 				expect(users[-1].status_emoji).must_equal ""
+			end
+		end
+
+		it "raises an error when a call fails" do
+			VCR.use_cassette("users-list-endpoint") do
+			
 			end
 		end
 	end
