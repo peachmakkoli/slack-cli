@@ -33,7 +33,11 @@ VCR.configure do |config|
   }
 
   # Don't leave our token lying around in a cassette file.
-  config.filter_sensitive_data("<SLACK_TOKEN>") do
-    ENV["SLACK_TOKEN"]
+  config.filter_sensitive_data("<BOT_TOKEN>") do
+    ENV["BOT_TOKEN"]
+  end
+
+  config.filter_sensitive_data("<USER_TOKEN>") do
+    ENV["USER_TOKEN"]
   end
 end
