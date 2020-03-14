@@ -2,8 +2,6 @@ require_relative 'recipient'
 
 module SlackCLI
 	class User < Recipient
-		GETUSER_URL = "#{BASE_URL}users.list"
-
 		attr_reader :real_name, :status_text, :status_emoji
 
 		def initialize(slack_id:, name:, real_name:, status_text:, status_emoji:)
@@ -15,15 +13,14 @@ module SlackCLI
 		end
 
 		def details
-			# return the attributes of a user
+			# When I type details, the program should print out details for the currently selected recipient. What information is printed depends on whether it's a channel or a user.
 		end
 
 		def self.list_all
 			response = self.get(GETUSER_URL, GET_QUERY)
 			
-			# case response.code
-			# when 400, 401, 403, 404, 500
-			# 	raise SlackApiError, response["reason"]
+			# if response.code != 200 || response["ok"] == false
+			# 	raise SlackApiError, "We encountered an error: #{response["error"]}"
 			# end
 
 			return response["members"].map { |user| new(

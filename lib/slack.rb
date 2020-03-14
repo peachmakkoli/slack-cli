@@ -23,7 +23,7 @@ def main
   end
 
   loop do
-		puts "\nWhat would you like to do? \n1) list users \n2) list channels \n3) quit"
+		puts "\nWhat would you like to do? \n1) list users \n2) list channels \n3) select user \n4) select channel \n5) quit"
 		option = gets.chomp.downcase
 
 		case option
@@ -31,8 +31,14 @@ def main
 				tp list_users, :slack_id, :name, :real_name, :status_text, :status_emoji
 			when "2", "list channels"
 				tp list_channels, :slack_id, :name, :topic, :member_count
-			when "3", "quit"
+			when "3", "select user"
+				# When I type select user, I should be able to supply a username or Slack ID. The corresponding user should be the "selected" recipient.
+			when "4", "select channel"
+				# When I type select channel, I should be able to supply a channel name or Slack ID. The corresponding channel should be the "selected" recipient.
+			when "5", "quit"
 				break
+			else 
+				puts "Option not recognized! Please try again."
 		end
 	end
 

@@ -2,8 +2,6 @@ require_relative 'recipient'
 
 module SlackCLI
 	class Channel < Recipient
-		GETCHANNEL_URL = "#{BASE_URL}conversations.list"
-
 		attr_reader :topic, :member_count
 
 		def initialize(slack_id:, name:, topic:, member_count:)
@@ -14,7 +12,7 @@ module SlackCLI
 		end
 
 		def details
-			# return the attributes of a channel
+			# When I type details, the program should print out details for the currently selected recipient. What information is printed depends on whether it's a channel or a user.
 		end
 
 		def self.list_all
