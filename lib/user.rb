@@ -18,11 +18,6 @@ module SlackCLI
 
 		def self.list_all
 			response = self.get(GETUSER_URL, GET_QUERY)
-			
-			# if response.code != 200 || response["ok"] == false
-			# 	raise SlackApiError, "We encountered an error: #{response["error"]}"
-			# end
-
 			return response["members"].map { |user| new(
 				slack_id: user["id"],
 				name: user["name"],

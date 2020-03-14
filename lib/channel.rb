@@ -17,12 +17,6 @@ module SlackCLI
 
 		def self.list_all
 			response = self.get(GETCHANNEL_URL, GET_QUERY)
-						
-			# case response.code
-			# when 400, 401, 403, 404, 500
-			# 	raise SlackApiError, response["reason"]
-			# end
-
 			return response["channels"].map { |channel| new(
 				slack_id: channel["id"],
 				name: channel["name"],
