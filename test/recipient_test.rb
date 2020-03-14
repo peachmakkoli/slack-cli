@@ -1,14 +1,15 @@
 require_relative 'test_helper'
 
 describe "Recipient class" do
-	API_KEY = ENV["SLACK_TOKEN"]
+	USER_KEY = ENV["USER_TOKEN"]
+	BOT_KEY = ENV["BOT_TOKEN"]
 	BASE_URL = "https://slack.com/api/"
-	POST_URL = "#{BASE_URL}chat.postMessage"
 	GETUSER_URL = "#{BASE_URL}users.list"
 	GETCHANNEL_URL = "#{BASE_URL}conversations.list"
+	POST_URL = "#{BASE_URL}chat.postMessage"
 	GET_QUERY = {
 		query: {
-			token: API_KEY,
+			token: USER_KEY,
 		}
 	}
 
