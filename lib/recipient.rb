@@ -2,12 +2,15 @@ require 'httparty'
 
 module SlackCLI	
 	class Recipient
-		API_KEY = ENV["SLACK_TOKEN"]
+		USER_KEY = ENV["USER_TOKEN"]
+		BOT_KEY = ENV["BOT_TOKEN"]
 		BASE_URL = "https://slack.com/api/"
+		GETUSER_URL = "#{BASE_URL}users.list"
+		GETCHANNEL_URL = "#{BASE_URL}conversations.list"
 		POST_URL = "#{BASE_URL}chat.postMessage"
 		GET_QUERY = {
 			query: {
-				token: API_KEY,
+				token: USER_KEY,
 			}
 		}
 		
@@ -35,6 +38,8 @@ module SlackCLI
 		def self.list_all
 			raise NotImplementedError, 'Implement me in a subclass!'
 		end
+	end
 
+	class SlackAPIError < Exception
 	end
 end
