@@ -56,21 +56,21 @@ describe "Workspace class" do
 			@workspace.select_user("USLACKBOT")
 			details = @workspace.show_details
 
-			expect(details.slack_id).must_equal "USLACKBOT"
-			expect(details.name).must_equal "slackbot"
-			expect(details.real_name).must_equal "Slackbot"
-			expect(details.status_text).must_equal ""
-			expect(details.status_emoji).must_equal ""
+			expect(details[0]).must_equal "USLACKBOT"
+			expect(details[1]).must_equal "slackbot"
+			expect(details[2]).must_equal "Slackbot"
+			expect(details[3]).must_equal ""
+			expect(details[4]).must_equal ""
 		end
 
 		it "returns the expected details for the selected channel" do
 			@workspace.select_channel("CUT6YR3LJ")
 			details = @workspace.show_details
 
-			expect(details.slack_id).must_equal "CUT6YR3LJ"
-			expect(details.name).must_equal "lees-test-channel"
-			expect(details.topic).must_equal "For having fun with the Slack API!!"
-			expect(details.member_count).must_equal 2
+			expect(details[0]).must_equal "CUT6YR3LJ"
+			expect(details[1]).must_equal "lees-test-channel"
+			expect(details[2]).must_equal "For having fun with the Slack API!!"
+			expect(details[3]).must_equal 2
 		end
 
 		it "throws an exception if no recipient is currently selected" do
