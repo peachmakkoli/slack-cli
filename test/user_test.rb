@@ -39,7 +39,7 @@ describe "User class" do
 			end
 		end
 		
-		it "raises an error when a call fails" do
+		it "throws an exception when a call fails" do
 			VCR.use_cassette("users-list-endpoint") do
 				expect{SlackCLI::User.get("https://slack.com/api/bogus.endpoint", GET_QUERY)}.must_raise SlackAPIError
 			end
