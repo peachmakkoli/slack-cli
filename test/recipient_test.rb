@@ -4,9 +4,6 @@ describe "Recipient class" do
 	USER_KEY = ENV["USER_TOKEN"]
 	BOT_KEY = ENV["BOT_TOKEN"]
 	BASE_URL = "https://slack.com/api/"
-	GETUSER_URL = "#{BASE_URL}users.list"
-	GETCHANNEL_URL = "#{BASE_URL}conversations.list"
-	POST_URL = "#{BASE_URL}chat.postMessage"
 	GET_QUERY = {
 		query: {
 			token: BOT_KEY,
@@ -35,8 +32,50 @@ describe "Recipient class" do
 		end
 	end
 
-	# remove this method from private so it can be tested?
+	describe "#send_message" do
+		before do
+			@user = SlackCLI::User.new(
+				slack_id: "UV7S06J4X", 
+				name: "Lee",
+				real_name: "Lee Higgins",
+				status_text: "I'm happy :)",
+				status_emoji: ":sparkles:"
+			)
+			@channel = SlackCLI::Channel.new(
+				slack_id: "CUT6YR3LJ", 
+				name: "lees-test-channel",
+				topic: "For having fun with the Slack API!!",
+				member_count: 2
+			)
+		end
 
+		it "can send a message to a user" do
+			VCR.use_cassette("post-message-endpoint") do
+				response = @user.send_message("Don't you think dreams and the internet are similar?")
+				expect(response.code).must_equal 200
+				expect(response["ok"]).must_equal true
+			end
+		end
+
+		it "can send a message to a channel" do
+			VCR.use_cassette("post-message-endpoint") do
+				response = @channel.send_message("They are both areas where the repressed conscious mind vents.")
+				expect(response.code).must_equal 200
+				expect(response["ok"]).must_equal true
+			end
+		end
+		
+		it "throws an exception when a call fails" do
+			VCR.use_cassette("post-message-endpoint") do
+				expect{@user.send_message(["an", "array"])}.must_raise SlackAPIError
+				expect{@channel.send_message({:a => "hash"})}.must_raise SlackAPIError
+			end
+		end
+	end
+
+	# tests for #self.get can be found in the User and Channel classes!
+
+	# remove this method from private so it can be tested?
 	# describe "#self.list_all" do
 	# 	it "raises a NotImplementedError if called" do
 	# 		expect{SlackCLI::Recipient.list_all}.must_raise NotImplementedError
