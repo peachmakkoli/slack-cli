@@ -15,28 +15,30 @@ def main
   @workspace = SlackCLI::Workspace.new
 
   def list_users
-  return @workspace.users
+  	return @workspace.users
   end
 
   def list_channels
-  return @workspace.channels
+  	return @workspace.channels
 	end
 	
 	def select_user_option
 		puts "Please enter the user ID:"
 		id = gets.chomp.upcase
+		
 		begin
 			@workspace.select_user(id)
 		rescue SlackAPIError => error
 			puts error.message
 		else
-			puts "Ok! \"#{@workspace.selected.name}\" selected."
+			puts "Ok! \"#{@workspace.selected.real_name}\" selected."
 		end
 	end
 
 	def select_channel_option
 		puts "Please enter the channel ID:"
 		id = gets.chomp.upcase
+		
 		begin
 			@workspace.select_channel(id)
 		rescue SlackAPIError => error
@@ -53,15 +55,30 @@ def main
 			puts error.message
 		end
 
-		if @workspace.selected.class == SlackCLI::User 
+		if @workspace.selected.is_a? SlackCLI::User 
 			tp @workspace.show_details, :slack_id, :name, :real_name, :status_text, :status_emoji
-		elsif @workspace.selected.class == SlackCLI::Channel
+		elsif @workspace.selected.is_a? SlackCLI::Channel
 			tp @workspace.show_details, :slack_id, :name, :topic, :member_count
 		end
 	end
 
+	def send_message_option
+		(@workspace.selected.is_a? SlackCLI::User) ? (name = @workspace.selected.real_name) : (name = @workspace.selected.name)
+
+		puts "What would you like to say to #{name}?"
+		text = gets.chomp.to_s
+		
+		begin
+			@workspace.selected.send_message(text)
+		rescue SlackAPIError => error
+			puts error.message
+		else
+			puts "Your message was successfully sent!"
+		end
+	end
+
   loop do
-		puts "\nWhat would you like to do? \n1) list users \n2) list channels \n3) select user \n4) select channel \n5) details \n6) quit"
+		puts "\nWhat would you like to do? \n1) list users \n2) list channels \n3) select user \n4) select channel \n5) details \n6) send message \n7) quit"
 		option = gets.chomp.downcase
 
 		case option
@@ -75,7 +92,9 @@ def main
 				select_channel_option
 			when "5", "details"
 				show_details_option
-			when "6", "quit"
+			when "6", "send message"
+				send_message_option
+			when "7", "quit"
 				break
 			else 
 				puts "Sorry, that's not an option!"
