@@ -74,8 +74,15 @@ describe "Workspace class" do
 		end
 
 		it "throws an exception if no recipient is currently selected" do
-			@workspace.selected.nil?
+			expect(@workspace.selected).must_be_nil
 			expect{@workspace.show_details}.must_raise SlackAPIError
+		end
+	end
+
+	describe "#send_message" do
+		it "throws an exception if no recipient is currently selected" do
+			expect(@workspace.selected).must_be_nil
+			expect{@workspace.send_message("Oh no!")}.must_raise SlackAPIError
 		end
 	end
 end
