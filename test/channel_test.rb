@@ -44,6 +44,33 @@ describe "Channel class" do
 		end
 	end
 
+	describe "#details" do
+		before do
+			@channel = SlackCLI::Channel.new(
+				slack_id: "CUT6YR3LJ", 
+				name: "lees-test-channel",
+				topic: "For having fun with the Slack API!!",
+				member_count: 2
+			)
+		end
+		
+		it "returns an array of the expected length" do
+			VCR.use_cassette("channels-list-endpoint") do
+				expect(@channel.details).must_be_kind_of Array
+				expect(@channel.details.length).must_equal 4
+			end
+		end
+
+		it "returns the expected details for the channel" do
+			VCR.use_cassette("channels-list-endpoint") do
+				expect(@channel.details[0]).must_equal "CUT6YR3LJ"
+				expect(@channel.details[1]).must_equal "lees-test-channel"
+				expect(@channel.details[2]).must_equal "For having fun with the Slack API!!"
+				expect(@channel.details[3]).must_equal 2
+			end
+		end
+	end
+
 	describe "#self.list_all" do
 		it "returns all the channels" do
 			VCR.use_cassette("channels-list-endpoint") do

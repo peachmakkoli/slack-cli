@@ -46,6 +46,35 @@ describe "User class" do
 		end
 	end
 
+	describe "#details" do
+		before do
+			@user = SlackCLI::User.new(
+				slack_id: "UV7S06J4X", 
+				name: "Lee",
+				real_name: "Lee Higgins",
+				status_text: "I'm happy :)",
+				status_emoji: ":sparkles:"
+			)
+		end
+		
+		it "returns an array of the expected length" do
+			VCR.use_cassette("users-list-endpoint") do
+				expect(@user.details).must_be_kind_of Array
+				expect(@user.details.length).must_equal 5
+			end
+		end
+
+		it "returns the expected details for the user" do
+			VCR.use_cassette("users-list-endpoint") do
+				expect(@user.details[0]).must_equal "UV7S06J4X"
+				expect(@user.details[1]).must_equal "Lee"
+				expect(@user.details[2]).must_equal "Lee Higgins"
+				expect(@user.details[3]).must_equal "I'm happy :)"
+				expect(@user.details[4]).must_equal ":sparkles:"
+			end
+		end
+	end
+
 	describe "#self.list_all" do
 		it "returns all the users" do
 			VCR.use_cassette("users-list-endpoint") do
