@@ -1,0 +1,273 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://slack.com/api/chat.postMessage?channel=CUT6YR3LJ&text=They%20are%20both%20areas%20where%20the%20repressed%20conscious%20mind%20vents.&token=<BOT_TOKEN>&username=Paprika
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '366'
+      Connection:
+      - keep-alive
+      Date:
+      - Sun, 15 Mar 2020 09:11:35 GMT
+      Server:
+      - Apache
+      X-Slack-Req-Id:
+      - 4a5aa5432d708da91740437a295563ef
+      X-Oauth-Scopes:
+      - chat:write,channels:read,users:read
+      X-Accepted-Oauth-Scopes:
+      - chat:write
+      Access-Control-Expose-Headers:
+      - x-slack-req-id, retry-after
+      X-Slack-Backend:
+      - h
+      X-Content-Type-Options:
+      - nosniff
+      Expires:
+      - Mon, 26 Jul 1997 05:00:00 GMT
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      X-Xss-Protection:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Headers:
+      - slack-route, x-slack-version-ts, x-b3-traceid, x-b3-spanid, x-b3-parentspanid,
+        x-b3-sampled, x-b3-flags
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Referrer-Policy:
+      - no-referrer
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Via:
+      - haproxy-www-d99l
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 fec77e486350d1bd33f526a760d8b5a4.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA19-C1
+      X-Amz-Cf-Id:
+      - zXfIxXF2c6tsZoPxj00w0HeUsnhCRZi-xJPTdTEvP4565dtHPGSW6A==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"ok":true,"channel":"CUT6YR3LJ","ts":"1584263495.000200","message":{"bot_id":"BUTG4NRPC","type":"message","text":"They
+        are both areas where the repressed conscious mind vents.","user":"UUTG4NT6W","ts":"1584263495.000200","team":"TV6151X8D","bot_profile":{"id":"BUTG4NRPC","deleted":false,"name":"Space
+        - Lee - API Project","updated":1583964500,"app_id":"AUTFW5NHG","icons":{"image_36":"https:\/\/a.slack-edge.com\/80588\/img\/plugins\/app\/bot_36.png","image_48":"https:\/\/a.slack-edge.com\/80588\/img\/plugins\/app\/bot_48.png","image_72":"https:\/\/a.slack-edge.com\/80588\/img\/plugins\/app\/service_72.png"},"team_id":"TV6151X8D"}}}'
+    http_version: null
+  recorded_at: Sun, 15 Mar 2020 09:11:35 GMT
+- request:
+    method: post
+    uri: https://slack.com/api/chat.postMessage?channel=UV7S06J4X&text%5B%5D=an&text%5B%5D=array&token=<BOT_TOKEN>&username=Paprika
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '58'
+      Connection:
+      - keep-alive
+      Date:
+      - Sun, 15 Mar 2020 09:11:35 GMT
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Referrer-Policy:
+      - no-referrer
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      X-Slack-Req-Id:
+      - ff782e6a6e3cb713d4256c479c0fb485
+      X-Xss-Protection:
+      - '0'
+      X-Slack-Backend:
+      - h
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Via:
+      - haproxy-www-tza9
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 4c48e9fb20d53d40e9fe273dbdae1099.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA19-C1
+      X-Amz-Cf-Id:
+      - Hf1g4nvOrmVMLmqAPtT0N62wwxUmSKtjYcz4f2xQ8uISPRlqKo2_Yw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"ok":false,"error":"invalid_array_arg"}'
+    http_version: null
+  recorded_at: Sun, 15 Mar 2020 09:11:35 GMT
+- request:
+    method: post
+    uri: https://slack.com/api/chat.postMessage?channel=CUT6YR3LJ&text%5Ba%5D=hash&token=<BOT_TOKEN>&username=Paprika
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '58'
+      Connection:
+      - keep-alive
+      Date:
+      - Sun, 15 Mar 2020 09:11:35 GMT
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Referrer-Policy:
+      - no-referrer
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      X-Slack-Req-Id:
+      - 5f9a6ca79a173e12edf33ef6fb57658e
+      X-Xss-Protection:
+      - '0'
+      X-Slack-Backend:
+      - h
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Via:
+      - haproxy-www-7z9c
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 2e20768704c71ff3ce2e677251d27f3c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA19-C1
+      X-Amz-Cf-Id:
+      - kZUAT7jAqpjlyi1fwVmObE8Kdh3d252EWuRcHHuz5XGAlJe4Oums9w==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"ok":false,"error":"invalid_array_arg"}'
+    http_version: null
+  recorded_at: Sun, 15 Mar 2020 09:11:36 GMT
+- request:
+    method: post
+    uri: https://slack.com/api/chat.postMessage?channel=UV7S06J4X&text=Don%27t%20you%20think%20dreams%20and%20the%20internet%20are%20similar?&token=<BOT_TOKEN>&username=Paprika
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '363'
+      Connection:
+      - keep-alive
+      Date:
+      - Sun, 15 Mar 2020 09:11:36 GMT
+      Server:
+      - Apache
+      X-Slack-Req-Id:
+      - 1937913bd4626fceaf9cc57ca22ee74e
+      X-Oauth-Scopes:
+      - chat:write,channels:read,users:read
+      X-Accepted-Oauth-Scopes:
+      - chat:write
+      Access-Control-Expose-Headers:
+      - x-slack-req-id, retry-after
+      X-Slack-Backend:
+      - h
+      X-Content-Type-Options:
+      - nosniff
+      Expires:
+      - Mon, 26 Jul 1997 05:00:00 GMT
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      X-Xss-Protection:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Headers:
+      - slack-route, x-slack-version-ts, x-b3-traceid, x-b3-spanid, x-b3-parentspanid,
+        x-b3-sampled, x-b3-flags
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Referrer-Policy:
+      - no-referrer
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Via:
+      - haproxy-www-heis
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 49cdeca097624936e070b73619df7da9.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA19-C1
+      X-Amz-Cf-Id:
+      - 0PlsZq_mh68mXeZNZ6RsnNe_tvaWNBtigZmHAWrcEaOzhgGjPvvYQw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"ok":true,"channel":"DV69W87NC","ts":"1584263496.000400","message":{"bot_id":"BUTG4NRPC","type":"message","text":"Don''t
+        you think dreams and the internet are similar?","user":"UUTG4NT6W","ts":"1584263496.000400","team":"TV6151X8D","bot_profile":{"id":"BUTG4NRPC","deleted":false,"name":"Space
+        - Lee - API Project","updated":1583964500,"app_id":"AUTFW5NHG","icons":{"image_36":"https:\/\/a.slack-edge.com\/80588\/img\/plugins\/app\/bot_36.png","image_48":"https:\/\/a.slack-edge.com\/80588\/img\/plugins\/app\/bot_48.png","image_72":"https:\/\/a.slack-edge.com\/80588\/img\/plugins\/app\/service_72.png"},"team_id":"TV6151X8D"}}}'
+    http_version: null
+  recorded_at: Sun, 15 Mar 2020 09:11:36 GMT
+recorded_with: VCR 5.1.0
