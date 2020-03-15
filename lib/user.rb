@@ -13,8 +13,7 @@ module SlackCLI
 		end
 
 		def self.list_all
-			response = self.get(
-				"#{BASE_URL}users.list", GET_QUERY)
+			response = self.get("#{BASE_URL}users.list", GET_QUERY)
 			
 			return response["members"].map { |user| new(
 				slack_id: user["id"],
