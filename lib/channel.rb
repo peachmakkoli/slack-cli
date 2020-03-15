@@ -2,6 +2,13 @@ require_relative 'recipient'
 
 module SlackCLI
 	class Channel < Recipient
+		GETCHANNEL_QUERY = {
+			query: {
+				token: BOT_KEY,
+				channel: @slack_id
+			}
+		}
+
 		attr_reader :topic, :member_count
 
 		def initialize(slack_id:, name:, topic:, member_count:)
@@ -12,11 +19,11 @@ module SlackCLI
 		end
 
 		def details
-			return @slack_id, @name, @topic, @member_count
+			return self.get(GETCHANNEL_URL, GETCHANNEL_QUERY)
 		end
 
 		def self.list_all
-			response = self.get(GETCHANNEL_URL, GET_QUERY)
+			response = self.get(GETALLCHANNELS_URL, GETALL_QUERY)
 
 			return response["channels"].map { |channel| new(
 				slack_id: channel["id"],

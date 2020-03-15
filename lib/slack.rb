@@ -52,16 +52,10 @@ def main
 		rescue SlackAPIError => error
 			puts error.message
 		end
-
-		if @workspace.selected.class == SlackCLI::User 
-			tp @workspace.show_details, :slack_id, :name, :real_name, :status_text, :status_emoji
-		elsif @workspace.selected.class == SlackCLI::Channel
-			tp @workspace.show_details, :slack_id, :name, :topic, :member_count
-		end
 	end
 
   loop do
-		puts "\nWhat would you like to do? \n1) list users \n2) list channels \n3) select user \n4) select channel \n5) details \n6) quit"
+		puts "\nWhat would you like to do? \n1) list users \n2) list channels \n3) select user \n4) select channel \n5) details \n6) send message \n7) quit"
 		option = gets.chomp.downcase
 
 		case option
@@ -74,8 +68,10 @@ def main
 			when "4", "select channel"
 				select_channel_option
 			when "5", "details"
-				show_details_option
-			when "6", "quit"
+				tp show_details_option
+			when "6", "send message"
+
+			when "7", "quit"
 				break
 			else 
 				puts "Sorry, that's not an option!"

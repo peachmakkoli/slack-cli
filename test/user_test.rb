@@ -32,7 +32,7 @@ describe "User class" do
 	describe "#self.get" do
 		it "can get a list of users" do
 			VCR.use_cassette("users-list-endpoint") do
-				response = SlackCLI::User.get(GETUSER_URL, GET_QUERY)
+				response = SlackCLI::User.get(GETALLUSERS_URL, GET_QUERY)
 				expect(response.code).must_equal 200
 				expect(response["ok"]).must_equal true
 				expect(response["members"]).must_be_kind_of Array

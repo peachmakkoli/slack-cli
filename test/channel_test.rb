@@ -30,7 +30,7 @@ describe "Channel class" do
 	describe "#self.get" do
 		it "can get a list of channels" do
 			VCR.use_cassette("channels-list-endpoint") do
-				response = SlackCLI::Channel.get(GETCHANNEL_URL, GET_QUERY)
+				response = SlackCLI::Channel.get(GETALLCHANNELS_URL, GET_QUERY)
 				expect(response.code).must_equal 200
 				expect(response["ok"]).must_equal true
 				expect(response["channels"]).must_be_kind_of Array
@@ -53,7 +53,7 @@ describe "Channel class" do
 				member_count: 2
 			)
 		end
-		
+
 		it "returns an array of the expected length" do
 			VCR.use_cassette("channels-list-endpoint") do
 				expect(@channel.details).must_be_kind_of Array

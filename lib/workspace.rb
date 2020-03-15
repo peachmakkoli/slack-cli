@@ -23,8 +23,8 @@ module SlackCLI
 		end
 
 		def show_details
-			raise SlackAPIError.new("No user or channel was selected!") if @selected.nil?
-			return @selected
+			raise SlackAPIError.new("No user or channel selected!") if @selected.nil?
+			return @selected.details
 		end
 
 		def send_message

@@ -4,11 +4,15 @@ module SlackCLI
 	class Recipient
 		USER_KEY = ENV["USER_TOKEN"]
 		BOT_KEY = ENV["BOT_TOKEN"]
+		
 		BASE_URL = "https://slack.com/api/"
-		GETUSER_URL = "#{BASE_URL}users.list"
-		GETCHANNEL_URL = "#{BASE_URL}conversations.list"
+		GETALLUSERS_URL = "#{BASE_URL}users.list"
+		GETALLCHANNELS_URL = "#{BASE_URL}conversations.list"
+		GETUSER_URL = "#{BASE_URL}users.info"
+		GETCHANNEL_URL = "#{BASE_URL}conversations.info"
 		POST_URL = "#{BASE_URL}chat.postMessage"
-		GET_QUERY = {
+		
+		GETALL_QUERY = {
 			query: {
 				token: BOT_KEY,
 			}
