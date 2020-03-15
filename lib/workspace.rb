@@ -13,7 +13,6 @@ module SlackCLI
 				channel.slack_id == id
 			}).first
 			raise SlackAPIError.new("No channel with that ID was found!") if @selected.nil?
-			return @selected
 		end
 
 		def select_user(id)
@@ -21,11 +20,11 @@ module SlackCLI
 				user.slack_id == id
 			}).first
 			raise SlackAPIError.new("No user with that ID was found!") if @selected.nil?
-			return @selected
 		end
 
 		def show_details
-			# If no recipient is currently selected, the program should let me know and return to the main command prompt.
+			raise SlackAPIError.new("No user or channel was selected!") if @selected.nil?
+			return @selected
 		end
 
 		def send_message
