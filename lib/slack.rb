@@ -23,7 +23,7 @@ def main
   end
 
   loop do
-		puts "\nWhat would you like to do? \n1) list users \n2) list channels \n3) select user \n4) select channel \n5) quit"
+		puts "\nWhat would you like to do? \n1) list users \n2) list channels \n3) select user \n4) select channel \n5) details \n6) quit"
 		option = gets.chomp.downcase
 
 		case option
@@ -35,7 +35,10 @@ def main
 				# When I type select user, I should be able to supply a username or Slack ID. The corresponding user should be the "selected" recipient.
 			when "4", "select channel"
 				# When I type select channel, I should be able to supply a channel name or Slack ID. The corresponding channel should be the "selected" recipient.
-			when "5", "quit"
+			when "5", "details"
+				# When I type details, the program should print out details for the currently selected recipient. What information is printed depends on whether it's a channel or a user.
+				# If no recipient is currently selected, the program should let me know and return to the main command prompt.
+			when "6", "quit"
 				break
 			else 
 				puts "Option not recognized! Please try again."
