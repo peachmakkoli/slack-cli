@@ -11,9 +11,10 @@ module SlackCLI
 			@status_text = status_text
 			@status_emoji = status_emoji
 		end
-		
+
 		def self.list_all
-			response = self.get(GETUSER_URL, GET_QUERY)
+			response = self.get(
+				"#{BASE_URL}users.list", GET_QUERY)
 			
 			return response["members"].map { |user| new(
 				slack_id: user["id"],

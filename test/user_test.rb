@@ -32,7 +32,7 @@ describe "User class" do
 	describe "#self.get" do
 		it "can get a list of users" do
 			VCR.use_cassette("users-list-endpoint") do
-				response = SlackCLI::User.get(GETUSER_URL, GET_QUERY)
+				response = SlackCLI::User.get("#{BASE_URL}users.list", GET_QUERY)
 				expect(response.code).must_equal 200
 				expect(response["ok"]).must_equal true
 				expect(response["members"]).must_be_kind_of Array
@@ -41,7 +41,7 @@ describe "User class" do
 		
 		it "throws an exception when a call fails" do
 			VCR.use_cassette("users-list-endpoint") do
-				expect{SlackCLI::User.get("https://slack.com/api/bogus.endpoint", GET_QUERY)}.must_raise SlackAPIError
+				expect{SlackCLI::User.get("#{BASE_URL}bogus.endpoint", GET_QUERY)}.must_raise SlackAPIError
 			end
 		end
 	end
