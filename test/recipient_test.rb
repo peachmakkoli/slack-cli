@@ -54,6 +54,7 @@ describe "Recipient class" do
 				response = @channel.send_message("Don't you think dreams and the internet are similar?")
 				expect(response.code).must_equal 200
 				expect(response["ok"]).must_equal true
+				expect(response["message"]["text"]).must_equal "Don't you think dreams and the internet are similar?"
 			end
 		end
 
@@ -62,6 +63,14 @@ describe "Recipient class" do
 				response = @user.send_message("They are both areas where the repressed conscious mind vents.")
 				expect(response.code).must_equal 200
 				expect(response["ok"]).must_equal true
+				expect(response["message"]["text"]).must_equal "They are both areas where the repressed conscious mind vents."
+			end
+		end
+
+		it "can set the bot's username" do
+			VCR.use_cassette("post-message-endpoint") do
+				response = @user.send_message("Hello! My name is Paprika.")
+				expect(response["message"]["username"]).must_equal "Paprika"
 			end
 		end
 		
