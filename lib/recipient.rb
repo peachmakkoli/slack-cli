@@ -26,7 +26,11 @@ module SlackCLI
 		end
 
 		def self.get(url, params)
-			return HTTParty.get(url, params)
+			response = HTTParty.get(url, params)
+
+			raise SlackAPIError.new("We encountered an error: #{response["error"]}") if response.code != 200 || response["ok"] == false
+			
+			return response
 		end
 
 		private 
@@ -39,7 +43,7 @@ module SlackCLI
 			raise NotImplementedError, 'Implement me in a subclass!'
 		end
 	end
+end
 
-	class SlackAPIError < Exception
-	end
+class SlackAPIError < Exception
 end
