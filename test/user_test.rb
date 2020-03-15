@@ -51,7 +51,7 @@ describe "User class" do
 			VCR.use_cassette("users-list-endpoint") do
 				users = SlackCLI::User.list_all
 				expect(users).must_be_kind_of Array
-				expect(users.length).must_equal 11
+				expect(users.length).must_equal 12
 			end
 		end
 
@@ -69,9 +69,9 @@ describe "User class" do
 		it "returns the correct information for the last user" do
 			VCR.use_cassette("users-list-endpoint") do
 				users = SlackCLI::User.list_all
-				expect(users[-1].slack_id).must_equal "UVDHLDG0N"
-				expect(users[-1].name).must_equal "space_antonia_slack_a"
-				expect(users[-1].real_name).must_equal "space_antonia_slack_a"
+				expect(users[-1].slack_id).must_equal "U0102NT1RE3"
+				expect(users[-1].name).must_equal "space_faezeh_slack_ap"
+				expect(users[-1].real_name).must_equal "space_faezeh_slack_ap"
 				expect(users[-1].status_text).must_equal ""
 				expect(users[-1].status_emoji).must_equal ""
 			end
