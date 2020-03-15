@@ -46,6 +46,20 @@ def main
 		end
 	end
 
+	def show_details_option
+		begin
+			@workspace.show_details
+		rescue SlackAPIError => error
+			puts error.message
+		end
+
+		if @workspace.selected.class == SlackCLI::User 
+			tp @workspace.show_details, :slack_id, :name, :real_name, :status_text, :status_emoji
+		elsif @workspace.selected.class == SlackCLI::Channel
+			tp @workspace.show_details, :slack_id, :name, :topic, :member_count
+		end
+	end
+
   loop do
 		puts "\nWhat would you like to do? \n1) list users \n2) list channels \n3) select user \n4) select channel \n5) details \n6) quit"
 		option = gets.chomp.downcase
@@ -60,8 +74,7 @@ def main
 			when "4", "select channel"
 				select_channel_option
 			when "5", "details"
-				# When I type details, the program should print out details for the currently selected recipient. What information is printed depends on whether it's a channel or a user.
-				# If no recipient is currently selected, the program should let me know and return to the main command prompt.
+				show_details_option
 			when "6", "quit"
 				break
 			else 
