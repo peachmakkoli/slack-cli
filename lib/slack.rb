@@ -32,9 +32,21 @@ def main
 			when "2", "list channels"
 				tp list_channels, :slack_id, :name, :topic, :member_count
 			when "3", "select user"
-				# When I type select user, I should be able to supply a username or Slack ID. The corresponding user should be the "selected" recipient.
+				puts "Please enter the user ID:"
+				id = gets.chomp.upcase
+				begin
+					tp @workspace.select_user(id), :slack_id, :name, :real_name, :status_text, :status_emoji
+				rescue SlackAPIError => error
+					puts error.message
+				end
 			when "4", "select channel"
-				# When I type select channel, I should be able to supply a channel name or Slack ID. The corresponding channel should be the "selected" recipient.
+				puts "Please enter the channel ID:"
+				id = gets.chomp.upcase
+				begin
+					tp @workspace.select_channel(id), :slack_id, :name, :topic, :member_count
+				rescue SlackAPIError => error
+					puts error.message
+				end
 			when "5", "details"
 				# When I type details, the program should print out details for the currently selected recipient. What information is printed depends on whether it's a channel or a user.
 				# If no recipient is currently selected, the program should let me know and return to the main command prompt.
