@@ -2,12 +2,8 @@ require_relative 'test_helper'
 
 describe "Workspace class" do
 	before do
-		VCR.use_cassette("users-list-endpoint") do
-			VCR.use_cassette("channels-list-endpoint") do
-				VCR.use_cassette("post-message-endpoint") do
-					@workspace = SlackCLI::Workspace.new
-				end
-			end
+		VCR.use_cassette("all-endpoints") do
+			@workspace = SlackCLI::Workspace.new
 		end
 	end
 
