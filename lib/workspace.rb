@@ -30,7 +30,6 @@ module SlackCLI
 		def send_message(text)
 			raise SlackAPIError.new("No user or channel was selected!") if @selected.nil?
 			@selected.send_message(text)
-			return "Your message was sent to #{@selected.name}!"
 		end
 
 	end
