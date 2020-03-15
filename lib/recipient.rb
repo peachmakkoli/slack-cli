@@ -5,15 +5,12 @@ module SlackCLI
 		USER_KEY = ENV["USER_TOKEN"]
 		BOT_KEY = ENV["BOT_TOKEN"]
 		BASE_URL = "https://slack.com/api/"
-		GETUSER_URL = "#{BASE_URL}users.list"
-		GETCHANNEL_URL = "#{BASE_URL}conversations.list"
-		POST_URL = "#{BASE_URL}chat.postMessage"
 		GET_QUERY = {
 			query: {
 				token: BOT_KEY,
 			}
 		}
-		
+
 		attr_reader :slack_id, :name
 
 		def initialize(slack_id:, name:)
@@ -21,8 +18,21 @@ module SlackCLI
 			@name = name
 		end
 		
-		def send_message(message)
+		def send_message(text)
+			response = HTTParty.post(
+				"#{BASE_URL}chat.postMessage", 
+				{
+					query: {
+						token: BOT_KEY,
+						channel: @slack_id,
+						text: text,
+						username: "Paprika"
+					}
+				})
 
+			raise SlackAPIError.new("We encountered an error: #{response["error"]}") if response.code != 200 || response["ok"] == false
+			
+			return response
 		end
 
 		def self.get(url, params)
