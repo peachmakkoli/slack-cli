@@ -11,11 +11,7 @@ module SlackCLI
 			@status_text = status_text
 			@status_emoji = status_emoji
 		end
-
-		def details
-			# When I type details, the program should print out details for the currently selected recipient. What information is printed depends on whether it's a channel or a user.
-		end
-
+		
 		def self.list_all
 			response = self.get(GETUSER_URL, GET_QUERY)
 			
