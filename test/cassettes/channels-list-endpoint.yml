@@ -25,11 +25,11 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Sun, 15 Mar 2020 21:04:32 GMT
+      - Wed, 25 Mar 2020 00:05:51 GMT
       Server:
       - Apache
       X-Slack-Req-Id:
-      - 2f7624180c5e53ed241312bda86e4d14
+      - 43e93fd1a358817de0d2d644c93c032c
       X-Oauth-Scopes:
       - chat:write,channels:read,users:read,chat:write.customize
       X-Accepted-Oauth-Scopes:
@@ -60,15 +60,15 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       X-Via:
-      - haproxy-www-zgfx
+      - haproxy-www-4uj1
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 adc2002956acc4d61bfbf3b973fdf247.cloudfront.net (CloudFront)
+      - 1.1 68eedbdfabd017beabf28d04341fec21.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - SEA19-C1
       X-Amz-Cf-Id:
-      - DXPXirye7nk2-G2JI7F4MPLCwQyHdMhLDPM0nTUc1ugJAd8aD4pZEw==
+      - RRe7NQv742RllNaHYqpCJQAJ0Nt1WvrXvi7OJuzXjKhUJ4v9qtLGNQ==
     body:
       encoding: ASCII-8BIT
       string: '{"ok":true,"channels":[{"id":"CUT6YR3LJ","name":"lees-test-channel","is_channel":true,"is_group":false,"is_im":false,"created":1583865761,"is_archived":false,"is_general":false,"unlinked":0,"name_normalized":"lees-test-channel","is_shared":false,"parent_conversation":null,"creator":"UV7S06J4X","is_ext_shared":false,"is_org_shared":false,"shared_team_ids":["TV6151X8D"],"pending_shared":[],"pending_connected_team_ids":[],"is_pending_ext_shared":false,"is_member":true,"is_private":false,"is_mpim":false,"topic":{"value":"For
@@ -81,7 +81,7 @@ http_interactions:
         you''d prefer to keep out of more focused work-related channels.","creator":"UV7S06J4X","last_set":1583865651},"previous_names":[],"num_members":5},{"id":"CV8HLGW9L","name":"hannah-j-test","is_channel":true,"is_group":false,"is_im":false,"created":1583876330,"is_archived":false,"is_general":false,"unlinked":0,"name_normalized":"hannah-j-test","is_shared":false,"parent_conversation":null,"creator":"UUVTM0ZJM","is_ext_shared":false,"is_org_shared":false,"shared_team_ids":["TV6151X8D"],"pending_shared":[],"pending_connected_team_ids":[],"is_pending_ext_shared":false,"is_member":false,"is_private":false,"is_mpim":false,"topic":{"value":"","creator":"","last_set":0},"purpose":{"value":"Let''s
         learn about Korean culture","creator":"UUVTM0ZJM","last_set":1584048625},"previous_names":[],"num_members":2},{"id":"CV8PR7M4M","name":"hannahmary","is_channel":true,"is_group":false,"is_im":false,"created":1583963710,"is_archived":false,"is_general":false,"unlinked":0,"name_normalized":"hannahmary","is_shared":false,"parent_conversation":null,"creator":"UV8PPJX37","is_ext_shared":false,"is_org_shared":false,"shared_team_ids":["TV6151X8D"],"pending_shared":[],"pending_connected_team_ids":[],"is_pending_ext_shared":false,"is_member":false,"is_private":false,"is_mpim":false,"topic":{"value":"","creator":"","last_set":0},"purpose":{"value":"","creator":"","last_set":0},"previous_names":[],"num_members":5},{"id":"CVB8WV8BS","name":"fun","is_channel":true,"is_group":false,"is_im":false,"created":1584048695,"is_archived":false,"is_general":false,"unlinked":0,"name_normalized":"fun","is_shared":false,"parent_conversation":null,"creator":"UUVTM0ZJM","is_ext_shared":false,"is_org_shared":false,"shared_team_ids":["TV6151X8D"],"pending_shared":[],"pending_connected_team_ids":[],"is_pending_ext_shared":false,"is_member":false,"is_private":false,"is_mpim":false,"topic":{"value":"","creator":"","last_set":0},"purpose":{"value":"","creator":"","last_set":0},"previous_names":[],"num_members":5}],"response_metadata":{"next_cursor":""}}'
     http_version: null
-  recorded_at: Sun, 15 Mar 2020 21:04:32 GMT
+  recorded_at: Wed, 25 Mar 2020 00:05:51 GMT
 - request:
     method: get
     uri: https://slack.com/api/bogus.endpoint?token=<BOT_TOKEN>
@@ -107,7 +107,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Sun, 15 Mar 2020 21:04:32 GMT
+      - Wed, 25 Mar 2020 00:05:51 GMT
       Server:
       - Apache
       Strict-Transport-Security:
@@ -126,170 +126,24 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Slack-Req-Id:
-      - bb1e1009d1a81ad616c859aff68bde7c
+      - 51b53357305da769c80c51498635aec6
       X-Xss-Protection:
       - '0'
       Access-Control-Allow-Origin:
       - "*"
       X-Via:
-      - haproxy-www-tkiz
+      - haproxy-www-7jn1
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 e5147bed59b539c23be4f2e01cf6f6f5.cloudfront.net (CloudFront)
+      - 1.1 2e20768704c71ff3ce2e677251d27f3c.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - SEA19-C1
       X-Amz-Cf-Id:
-      - D28sfppY3WEm_rvH2nSGwMgbWEX6G1Jw5ZwA2O3XPnimKODAXUfmmA==
+      - ksLWnt4NGg_NVZdFzmv8QV0aQye_yWCYlJcOjNDle4gVUORz8ryaMA==
     body:
       encoding: ASCII-8BIT
       string: '{"ok":false,"error":"unknown_method","req_method":"bogus.endpoint"}'
     http_version: null
-  recorded_at: Sun, 15 Mar 2020 21:04:33 GMT
-- request:
-    method: get
-    uri: https://slack.com/api/conversations.list?token=<USER_TOKEN>
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '830'
-      Connection:
-      - keep-alive
-      Date:
-      - Sun, 15 Mar 2020 21:49:58 GMT
-      Server:
-      - Apache
-      X-Slack-Req-Id:
-      - 9f3197aed6bd0c6db6365b19a29c7d4f
-      X-Oauth-Scopes:
-      - identify,channels:read,users:read,chat:write
-      X-Accepted-Oauth-Scopes:
-      - channels:read,groups:read,mpim:read,im:read,read
-      Access-Control-Expose-Headers:
-      - x-slack-req-id, retry-after
-      X-Slack-Backend:
-      - h
-      X-Content-Type-Options:
-      - nosniff
-      Expires:
-      - Mon, 26 Jul 1997 05:00:00 GMT
-      Cache-Control:
-      - private, no-cache, no-store, must-revalidate
-      X-Xss-Protection:
-      - '0'
-      Vary:
-      - Accept-Encoding
-      Pragma:
-      - no-cache
-      Access-Control-Allow-Headers:
-      - slack-route, x-slack-version-ts, x-b3-traceid, x-b3-spanid, x-b3-parentspanid,
-        x-b3-sampled, x-b3-flags
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-      Referrer-Policy:
-      - no-referrer
-      Access-Control-Allow-Origin:
-      - "*"
-      X-Via:
-      - haproxy-www-gnio
-      X-Cache:
-      - Miss from cloudfront
-      Via:
-      - 1.1 0bb842bd5868b86440983b936bb0adef.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - SEA19-C1
-      X-Amz-Cf-Id:
-      - xb8ql4jw750vAzYyraJubixRz0bLLRa151eKoHrRzJc1O7jlI6QJLg==
-    body:
-      encoding: ASCII-8BIT
-      string: '{"ok":true,"channels":[{"id":"CUT6YR3LJ","name":"lees-test-channel","is_channel":true,"is_group":false,"is_im":false,"created":1583865761,"is_archived":false,"is_general":false,"unlinked":0,"name_normalized":"lees-test-channel","is_shared":false,"parent_conversation":null,"creator":"UV7S06J4X","is_ext_shared":false,"is_org_shared":false,"shared_team_ids":["TV6151X8D"],"pending_shared":[],"pending_connected_team_ids":[],"is_pending_ext_shared":false,"is_member":true,"is_private":false,"is_mpim":false,"topic":{"value":"For
-        having fun with the Slack API!!","creator":"UV7S06J4X","last_set":1584080167},"purpose":{"value":"","creator":"","last_set":0},"previous_names":[],"num_members":2},{"id":"CV60LA20G","name":"general","is_channel":true,"is_group":false,"is_im":false,"created":1583865651,"is_archived":false,"is_general":true,"unlinked":0,"name_normalized":"general","is_shared":false,"parent_conversation":null,"creator":"UV7S06J4X","is_ext_shared":false,"is_org_shared":false,"shared_team_ids":["TV6151X8D"],"pending_shared":[],"pending_connected_team_ids":[],"is_pending_ext_shared":false,"is_member":true,"is_private":false,"is_mpim":false,"topic":{"value":"Company-wide
-        announcements and work-based matters","creator":"UV7S06J4X","last_set":1583865651},"purpose":{"value":"This
-        channel is for workspace-wide communication and announcements. All members
-        are in this channel.","creator":"UV7S06J4X","last_set":1583865651},"previous_names":[],"num_members":5},{"id":"CV86T0TPY","name":"random","is_channel":true,"is_group":false,"is_im":false,"created":1583865651,"is_archived":false,"is_general":false,"unlinked":0,"name_normalized":"random","is_shared":false,"parent_conversation":null,"creator":"UV7S06J4X","is_ext_shared":false,"is_org_shared":false,"shared_team_ids":["TV6151X8D"],"pending_shared":[],"pending_connected_team_ids":[],"is_pending_ext_shared":false,"is_member":true,"is_private":false,"is_mpim":false,"topic":{"value":"Non-work
-        banter and water cooler conversation","creator":"UV7S06J4X","last_set":1583865651},"purpose":{"value":"A
-        place for non-work-related flimflam, faffing, hodge-podge or jibber-jabber
-        you''d prefer to keep out of more focused work-related channels.","creator":"UV7S06J4X","last_set":1583865651},"previous_names":[],"num_members":5},{"id":"CV8HLGW9L","name":"hannah-j-test","is_channel":true,"is_group":false,"is_im":false,"created":1583876330,"is_archived":false,"is_general":false,"unlinked":0,"name_normalized":"hannah-j-test","is_shared":false,"parent_conversation":null,"creator":"UUVTM0ZJM","is_ext_shared":false,"is_org_shared":false,"shared_team_ids":["TV6151X8D"],"pending_shared":[],"pending_connected_team_ids":[],"is_pending_ext_shared":false,"is_member":false,"is_private":false,"is_mpim":false,"topic":{"value":"","creator":"","last_set":0},"purpose":{"value":"Let''s
-        learn about Korean culture","creator":"UUVTM0ZJM","last_set":1584048625},"previous_names":[],"num_members":2},{"id":"CV8PR7M4M","name":"hannahmary","is_channel":true,"is_group":false,"is_im":false,"created":1583963710,"is_archived":false,"is_general":false,"unlinked":0,"name_normalized":"hannahmary","is_shared":false,"parent_conversation":null,"creator":"UV8PPJX37","is_ext_shared":false,"is_org_shared":false,"shared_team_ids":["TV6151X8D"],"pending_shared":[],"pending_connected_team_ids":[],"is_pending_ext_shared":false,"is_member":true,"is_private":false,"is_mpim":false,"topic":{"value":"","creator":"","last_set":0},"purpose":{"value":"","creator":"","last_set":0},"previous_names":[],"num_members":5},{"id":"CVB8WV8BS","name":"fun","is_channel":true,"is_group":false,"is_im":false,"created":1584048695,"is_archived":false,"is_general":false,"unlinked":0,"name_normalized":"fun","is_shared":false,"parent_conversation":null,"creator":"UUVTM0ZJM","is_ext_shared":false,"is_org_shared":false,"shared_team_ids":["TV6151X8D"],"pending_shared":[],"pending_connected_team_ids":[],"is_pending_ext_shared":false,"is_member":true,"is_private":false,"is_mpim":false,"topic":{"value":"","creator":"","last_set":0},"purpose":{"value":"","creator":"","last_set":0},"previous_names":[],"num_members":5}],"response_metadata":{"next_cursor":""}}'
-    http_version: null
-  recorded_at: Sun, 15 Mar 2020 21:49:58 GMT
-- request:
-    method: get
-    uri: https://slack.com/api/bogus.endpoint?token=<USER_TOKEN>
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '80'
-      Connection:
-      - keep-alive
-      Date:
-      - Sun, 15 Mar 2020 21:49:59 GMT
-      Server:
-      - Apache
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-      Access-Control-Allow-Headers:
-      - slack-route, x-slack-version-ts, x-b3-traceid, x-b3-spanid, x-b3-parentspanid,
-        x-b3-sampled, x-b3-flags
-      Referrer-Policy:
-      - no-referrer
-      X-Slack-Backend:
-      - h
-      Access-Control-Expose-Headers:
-      - x-slack-req-id, retry-after
-      Vary:
-      - Accept-Encoding
-      X-Content-Type-Options:
-      - nosniff
-      X-Slack-Req-Id:
-      - e060fee7e309fd0ec5dba99e3b28c885
-      X-Xss-Protection:
-      - '0'
-      Access-Control-Allow-Origin:
-      - "*"
-      X-Via:
-      - haproxy-www-ty4a
-      X-Cache:
-      - Miss from cloudfront
-      Via:
-      - 1.1 68eedbdfabd017beabf28d04341fec21.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - SEA19-C1
-      X-Amz-Cf-Id:
-      - o7v_D4sk3CFFKbUhV-Jku1DifQCm3-Odbp0V9cLENQy3u-pHSXC5CA==
-    body:
-      encoding: ASCII-8BIT
-      string: '{"ok":false,"error":"unknown_method","req_method":"bogus.endpoint"}'
-    http_version: null
-  recorded_at: Sun, 15 Mar 2020 21:49:59 GMT
+  recorded_at: Wed, 25 Mar 2020 00:05:51 GMT
 recorded_with: VCR 5.1.0
