@@ -19,6 +19,8 @@ module SlackCLI
     end
     
     def send_message(text)
+      raise SlackAPIError.new("No text entered!") if text.match(/^\s+$/)
+
       response = HTTParty.post(
         "#{BASE_URL}chat.postMessage", 
         {

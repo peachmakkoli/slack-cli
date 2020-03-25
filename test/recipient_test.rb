@@ -76,8 +76,17 @@ describe "Recipient class" do
     
     it "throws an exception when a call fails" do
       VCR.use_cassette("post-message-endpoint") do
-        expect{@user.send_message(["an", "array"])}.must_raise SlackAPIError
-        expect{@channel.send_message({:a => "hash"})}.must_raise SlackAPIError
+        # tests user
+        expect{@user.send_message("")}.must_raise SlackAPIError
+        # tests channel
+        expect{@channel.send_message("")}.must_raise SlackAPIError
+      end
+    end
+
+    it "throws an exception if the text is only spaces" do
+      VCR.use_cassette("post-message-endpoint") do
+        expect{@user.send_message(" ")}.must_raise SlackAPIError
+        expect{@user.send_message("         ")}.must_raise SlackAPIError
       end
     end
   end
