@@ -11,18 +11,19 @@ require_relative 'channel'
 require_relative 'user'
 
 def main
-  puts "Welcome to Lee's Slack CLI!"
   @workspace = SlackCLI::Workspace.new
 
   def list_users
-    return @workspace.users
+    users = @workspace.users
+    tp users, :slack_id, :name, :real_name, :status_text, :status_emoji
   end
 
   def list_channels
-    return @workspace.channels
+    channels = @workspace.channels
+    tp channels, :slack_id, :name, :topic, :member_count
   end
   
-  def select_user_option
+  def select_user
     puts "Please enter the user ID:"
     id = gets.chomp.upcase
     
@@ -35,7 +36,7 @@ def main
     end
   end
 
-  def select_channel_option
+  def select_channel
     puts "Please enter the channel ID:"
     id = gets.chomp.upcase
     
@@ -48,7 +49,7 @@ def main
     end
   end
 
-  def show_details_option
+  def show_details
     begin
       @workspace.show_details
     rescue SlackAPIError => error
@@ -62,8 +63,8 @@ def main
     end
   end
 
-  def send_message_option
-    (@workspace.selected.is_a? SlackCLI::User) ? (name = @workspace.selected.real_name) : (name = @workspace.selected.name)
+  def send_message
+    (@workspace.selected.is_a? SlackCLI::User) ? (name = @workspace.selected.real_name) : (name = @workspace.selected.name) # If a user is selected, the user's real_name attribute is assigned to the name variable; otherwise, the name attribute is assigned to the name variable. This was to ensure that user's chosen names are displayed in the program! 
 
     puts "What would you like to say to #{name}?"
     text = gets.chomp.to_s
@@ -77,27 +78,29 @@ def main
     end
   end
 
+  puts "Welcome to Lee's Slack CLI!"
+
   loop do
     puts "\nWhat would you like to do? \n1) list users \n2) list channels \n3) select user \n4) select channel \n5) details \n6) send message \n7) quit"
     option = gets.chomp.downcase
 
     case option
       when "1", "list users"
-        tp list_users, :slack_id, :name, :real_name, :status_text, :status_emoji
+        list_users
       when "2", "list channels"
-        tp list_channels, :slack_id, :name, :topic, :member_count
+        list_channels
       when "3", "select user"
-        select_user_option
+        select_user
       when "4", "select channel"
-        select_channel_option
+        select_channel
       when "5", "details"
-        show_details_option
+        show_details
       when "6", "send message"
-        send_message_option
+        send_message
       when "7", "quit"
         break
       else 
-        puts "Sorry, that's not an option!"
+        puts "Sorry, that's not a valid option!"
     end
   end
 
